@@ -1,0 +1,33 @@
+NAME
+    ToyBox::XS::NBClustering - Simple Naive Bayes Clustering using Perl XS
+
+SYNOPSIS
+      use ToyBox::XS::NBClustering;
+
+      my $nb = ToyBox::XS::NBClustering->new();
+  
+      $nb->add_instance(
+          attributes => {a => 2, b => 3},
+      );
+  
+      $nb->add_instance(
+          attributes => {c => 3, d => 1},
+      );
+  
+      $nb->train(cluster_num => 2, alpha => 1.0);
+  
+      my $probs = $nb->predict(
+                      attributes => {a => 1, b => 1, d => 1, e =>1}
+                  );
+
+DESCRIPTION
+    This module implements a simple Naive Bayes Clustering using Perl XS.
+
+AUTHOR
+    TAGAMI Yukihiro <tagami.yukihiro@gmail.com>
+
+LICENSE
+    This library is distributed under the term of the MIT license.
+
+    <http://opensource.org/licenses/mit-license.php>
+
